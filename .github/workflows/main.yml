@@ -30,8 +30,8 @@ jobs:
         name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          username: ${{secrets.DOCKERHUB_USERNAME}}
-          password: ${{secrets.DOCKERHUB_TOKEN}}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       # Runs a set of commands using the runners shell
       
       - name: Build amd push
@@ -39,4 +39,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/sample-app_image:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sample-app_image:latest
